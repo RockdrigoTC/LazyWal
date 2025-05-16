@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+# -----------------------------------------------------------------------------
+# Clipboard history script for Rofi
+# -----------------------------------------------------------------------------
+# Description : This script allows you to search and select items
+#               from the clipboard history using Rofi.
+# location    : ~/.config/rofi/scripts/history_clip.
+# Requires    : 'rofi', 'greenclip'
+# -----------------------------------------------------------------------------
+
+rofi -modi "clipboard:greenclip print" \
+	-p "Clipboard Search > " \
+	-show clipboard \
+	-theme "$HOME/.config/rofi/config.rasi" \
+	-run-command '{cmd}'

@@ -1,0 +1,89 @@
+  Qtile - Keybindings (Default)
+
+[  Focus Movement]
+ + h / ←             → Focus left
+ + l / →             → Focus right
+ + j / ↓             → Focus down
+ + k / ↑             → Focus up
+ + Space             → Focus next window
+
+[  Window Movement (Shuffle)]
+ + Ctrl + h / ←      → Move window left
+ + Ctrl + l / →      → Move window right
+ + Ctrl + j / ↓      → Move window down
+ + Ctrl + k / ↑      → Move window up
+
+[  Resize Windows (Grow)]
+ + Shift + h / ←     → Grow window left
+ + Shift + l / →     → Grow window right
+ + Shift + j / ↓     → Grow window down
+ + Shift + k / ↑     → Grow window up
+ + Shift + n         → Normalize window size
+                                                        [1/4]
+  Qtile - Keybindings (Default)
+
+[  Window Actions]
+ + f                 → Toggle fullscreen
+ + Shift + f         → Toggle floating
+ + Shift + Enter     → Toggle split/unsplit
+ + c                 → Close focused window
+ + x                 → Next layout
+
+[󰢹  Workspaces]
+ + 1-8               → Switch to workspace 1-8
+ + Shift + 1-8       → Move window to workspace 1-8
+ + Tab               → Switch to next workspace
+ + Shift + Tab       → Switch to previous workspace
+ + z                 → Toggle between workspaces
+
+[  Qtile Control]
+ + Ctrl + r          → Reload Qtile config
+ + Ctrl + q          → Quit Qtile
+
+
+                                                        [2/4]
+  Qtile - Keybindings (Default)
+
+[  Launchers and Apps]
+ + Enter             → Launch terminal
+ + a                 → App launcher
+ + p                 → Power menu
+ + i                 → Theme switcher
+ + e                 → Thunar file manager
+ + r                 → Ranger file manager
+ + b                 → Firefox web browser
+
+[󰱠  Utils]
+ + n                 → Wifi menu
+ + b                 → Bluetooth menu
+ + m                 → Monitor system (btop)
+ + v                 → History clipboard menu
+ + s                 → Flameshot screenshot
+ + Shift + s         → Flameshot screenshot (select area)
+
+[󰋗  Help]
+ + o                 → Show help screen
+                                                        [3/4]
+  Qtile - Keybindings (Default)
+
+󰊕 Special Function Keys (Laptop Media Keys):
+
+[  Volume Control]
+󰝝 (Volume Up)         → Increase audio volume
+󰝞 (Volume Down)       → Decrease audio volume
+󰝟 (Mute/Unmute)       → Toggle mute
+
+[  Media Controls]
+ (Play/Pause)        → Toggle media playback
+ (Previous Track)    → Go to previous track
+ (Next Track)        → Next track
+
+[  Screen Brightness]
+ (Brightness Up)     → Increase screen brightness
+ (Brightness Down)   → Decrease screen brightness
+
+
+
+                                                        [4/4]
+
+

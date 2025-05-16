@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+# -----------------------------------------------------------------------------
+# Launcher Script for Rofi
+# -----------------------------------------------------------------------------
+# Description : This script launches Rofi with a custom theme.
+# location    : ~/.config/rofi/scripts/launcher
+# Requires    : 'rofi'
+# -----------------------------------------------------------------------------
+
+dir="$HOME/.config/rofi/settings"
+
+## Run
+rofi \
+	-show drun \
+	-theme ${dir}/launcher.rasi

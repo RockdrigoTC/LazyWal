@@ -1,0 +1,31 @@
+[general]
+# default
+
+[input]
+
+method = pulse
+source = auto
+
+[output]
+# default
+
+[color]
+
+background = "#060A1C"
+foreground = "#ffe8ff"
+
+gradient = 1
+gradient_count = 6
+
+gradient_color_6 = "#AFAEF6"
+gradient_color_5 = "#999BE5"
+gradient_color_4 = "#B5BBED"
+gradient_color_3 = "#6F91D4"
+gradient_color_2 = "#AD5DBF"
+gradient_color_1 = "#408ABF"
+
+[smoothing]
+# default
+
+[eq]
+# default

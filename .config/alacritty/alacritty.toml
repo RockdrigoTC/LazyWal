@@ -1,0 +1,67 @@
+general.import = [
+  "~/.config/alacritty/colors.toml",
+  "~/.config/alacritty/fonts.toml",
+]
+general.live_config_reload = true
+
+[env]
+TERM = "alacritty"
+WINIT_X11_SCALE_FACTOR = "1.0"
+
+[window]
+decorations = "full"
+dynamic_title = true
+opacity = 1
+startup_mode = "Windowed"
+
+[window.dimensions]
+columns = 82
+lines = 24
+
+[window.padding]
+x = 1
+y = 1
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[cursor]
+style = { shape = "Beam", blinking = "On" }
+vi_mode_style = { shape = "Block", blinking = "Off" }
+unfocused_hollow = true
+
+[selection]
+save_to_clipboard = true
+
+[mouse]
+hide_when_typing = true
+bindings = [
+  { mouse = "Right", action = "Paste" },
+  { mouse = "Right", mods = "Control", action = "PasteSelection" },
+  { mouse = "Middle", action = "Copy" },
+]
+
+[keyboard]
+bindings = [
+  { Key = "Space", mods = "Control", action = "ToggleViMode" },
+  { key = "C", mods = "Control|Shift", action = "Copy" },
+  { key = "V", mods = "Control|Shift", action = "Paste" },
+  { key = "Insert", mods = "Shift", action = "PasteSelection" },
+  { key = "PageUp", mods = "Shift", action = "ScrollPageUp" },
+  { key = "PageDown", mods = "Shift", action = "ScrollPageDown" },
+  { key = "Up", mods = "Control|Shift", action = "ScrollToTop" },
+  { key = "Down", mods = "Control|Shift", action = "ScrollToBottom" },
+  { key = "Up", mods = "Shift", action = "ScrollLineUp" },
+  { key = "Down", mods = "Shift", action = "ScrollLineDown" },
+]
+
+[bell]
+animation = "EaseOutExpo"
+duration = 0
+
+
+[debug]
+render_timer = false
+persistent_logging = false
+log_level = "Warn"

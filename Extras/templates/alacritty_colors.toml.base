@@ -1,0 +1,27 @@
+[colors.primary]
+background = 	"{color0}"
+foreground = 	"{color15}"
+
+[colors.cursor]
+text = 		"{color15}"
+cursor = 	"{color15}"
+
+[colors.normal]
+black = 	"#A0A0A0"
+red = 		"#E06C75"
+green = 	"{color2}"
+yellow = 	"{color3}"
+blue = 		"{color4}"
+magenta = 	"{color5}"
+cyan = 		"{color6}"
+white = 	"{color7}"
+
+[colors.bright]
+black = 	"#C0C0C0"
+red = 		"#E06C75"
+green = 	"{color10}"
+yellow = 	"{color11}"
+blue = 		"{color12}"
+magenta = 	"{color13}"
+cyan = 		"{color14}"
+white = 	"{color15}"

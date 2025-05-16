@@ -1,0 +1,115 @@
+/*---------------------------------*\
+         Global Properties Section
+\*---------------------------------*/
+@import "~/.config/rofi/settings/rofi_colors.rasi"
+
+* {
+    margin:             0;
+    padding:            0;
+    spacing:            0;
+    text-color:         @foreground;
+    background-color:   @background;
+}
+
+/*---------------------------------*\
+       Main Window Section
+\*---------------------------------*/
+window {
+    width:              25%;
+    background-color:   @background;
+    border-radius:      0px;
+    location:           center;
+    anchor:             center;
+}
+
+/*---------------------------------*\
+       Prompt Section
+\*---------------------------------*/
+prompt {
+    text-color:                 @active;
+}
+
+/*---------------------------------*\
+       Main Box Section
+\*---------------------------------*/
+mainbox {
+    children:           [inputbar, listview, message];
+    background-color:   @background;
+    padding:            10px;
+    spacing:            5px;
+}
+
+inputbar {
+    children: [prompt, entry];
+    orientation: horizontal;
+    spacing: 5px;
+    padding: 5px;
+}
+
+/*---------------------------------*\
+       Listview Section
+\*---------------------------------*/
+listview {
+    enabled:            true;
+    scrollbar:          true;
+    dynamic:            true;
+    fixed-height:       false;
+    lines:              10;
+    padding:            5px;
+    spacing:            4px;
+    background-color:   @background;
+}
+
+/*---------------------------------*\
+         Scrollbar Section
+\*---------------------------------*/
+scrollbar {
+    width:              5px;
+    background-color:   @background;
+}
+scroll-slider {
+    background-color:   @selected;
+}
+
+/*---------------------------------*\
+      Element Text Section
+\*---------------------------------*/
+element-text {
+    text-color:         @foreground;
+    background-color:   @background;
+}
+
+/*---------------------------------*\
+       Placeholder Section
+\*---------------------------------*/
+placeholder {
+    text-color:         @foreground;
+    italic:             true;
+}
+
+/*---------------------------------*\
+       Entry Section
+\*---------------------------------*/
+element {
+    background-color:           @background;
+    text-color:                 @foreground;
+    padding:                    2px 5px;
+    spacing:                    2px;
+}
+
+element.selected {
+    background-color:           @selected;
+    text-color:                 @background;
+}
+
+element-text.selected {
+    background-color: @selected;
+    text-color:       @background;
+}
+
+element-text {
+    background-color: @background;
+    text-color:       @foreground;
+}
+
+

@@ -1,0 +1,55 @@
+#!/usr/bin/env bash
+
+# -----------------------------------------------------------------------------
+# Theme Switcher Script
+# -----------------------------------------------------------------------------
+# Description : This script allows you to select and apply themes using Rofi.
+# location    : ~/.config/rofi/scripts/theme_switcher
+# Requires    : 'rofi'
+# -----------------------------------------------------------------------------
+
+# ───────────────────────────────────────────────────────────────
+#                         Theme Settings
+# ───────────────────────────────────────────────────────────────
+themes_dir="$HOME/Themes"                             # Directory where themes are stored
+rofi_config_dir="$HOME/.config/rofi/settings"         # Rofi config directory
+theme_applier="$HOME/.config/lazywal/change_theme.sh" # Script to apply theme
+
+# ───────────────────────────────────────────────────────────────
+#                         User Info
+# ───────────────────────────────────────────────────────────────
+username="󰣇 $(whoami)"
+sendoff="Select a theme to apply!"
+
+# ───────────────────────────────────────────────────────────────
+#                    Fetch and List Available Themes
+# ───────────────────────────────────────────────────────────────
+mapfile -t themes < <(find "$themes_dir" -maxdepth 1 -mindepth 1 -type d -exec basename {} \;)
+
+# Fallback if no themes are found
+if [[ ${#themes[@]} -eq 0 ]]; then
+	themes=("󰌙 No themes available")
+	no_themes=true
+else
+	no_themes=false
+fi
+
+# ───────────────────────────────────────────────────────────────
+#                         Rofi Menu
+# ───────────────────────────────────────────────────────────────
+rofi_cmd() {
+	printf "%s\n" "${themes[@]}" | rofi -dmenu \
+		-p "$username" \
+		-mesg "$sendoff" \
+		-theme "${rofi_config_dir}/theme_switcher.rasi"
+}
+
+chosen="$(rofi_cmd)"
+
+# Exit if nothing is selected or if the fallback was selected
+[[ -z "$chosen" || "$no_themes" == true ]] && exit
+
+# ───────────────────────────────────────────────────────────────
+#                    Apply the Selected Theme
+# ───────────────────────────────────────────────────────────────
+"$theme_applier" "$chosen"

@@ -1,0 +1,91 @@
+#!/usr/bin/env bash
+
+# -----------------------------------------------------------------------------
+# Spicetify Setup Script
+# -----------------------------------------------------------------------------
+# Description : Setup Spicetify for spotify theme
+# Location    : ~/.local/bin/spotify-setup.sh
+# Requires    : 'sed', 'bashfunctions.sh'
+# Note        : Review the log file for detailed error messages and status.
+# -----------------------------------------------------------------------------
+
+# Load functions
+source "$HOME/.config/lazywal/scripts/functions.sh"
+
+# -----------------------------------------------------------------------------
+# Variables
+# -----------------------------------------------------------------------------
+SPOTIFY_DIR="$HOME/.config/spotify"
+SPICETIFY_DIR="$HOME/.config/spicetify"
+THEME_DIR="$SPICETIFY_DIR/Themes/text"
+TMP_DIR="$HOME/.config/lazywal/spicetify-themes"
+
+# -----------------------------------------------------------------------------
+# Install required packages
+# -----------------------------------------------------------------------------
+install_pkg "spotify" "spotify"
+install_pkg "spicetify-cli" "spicetify"
+
+# -----------------------------------------------------------------------------
+# Configure Spicetify and adjust permissions
+# -----------------------------------------------------------------------------
+info "Configuring Spicetify"
+spotify_perms=$(stat -c "%A" /opt/spotify)
+spotify_apps_perms=$(stat -c "%A" /opt/spotify/Apps)
+
+if [ "${spotify_perms:8:1}" != "w" ] || [ "${spotify_apps_perms:8:1}" != "w" ]; then
+	warn "Adjusting Spotify folder permissions (sudo may request your password)"
+	sudo chmod a+wr /opt/spotify
+	sudo chmod -R a+wr /opt/spotify/Apps
+fi
+
+# Initialize Spicetify config if missing
+if [[ ! -e "$SPICETIFY_DIR/config-xpui.ini" ]]; then
+	spicetify >/dev/null 2>&1
+fi
+
+# Set Spotify directory in Spicetify config
+sed -i \
+	"s|^prefs_path[[:space:]]*=.*|prefs_path = $SPOTIFY_DIR/prefs|" \
+	"$SPICETIFY_DIR/config-xpui.ini"
+
+# -----------------------------------------------------------------------------
+# Request user login to Spotify
+# -----------------------------------------------------------------------------
+warn "Please open Spotify and log in to your account. Press [Enter] when done."
+read -r -p ">"
+if [[ ! -e "$SPOTIFY_DIR/prefs" ]]; then
+	error "Spotify prefs file not found. Please open Spotify and log in." --log
+	exit 1
+fi
+
+info "Backing up Spotify interface"
+spicetify backup apply -n >/dev/null 2>&1
+success "Spotify interface backed up successfully"
+
+# -----------------------------------------------------------------------------
+# Install and configure theme
+# -----------------------------------------------------------------------------
+info "Installing 'text' theme"
+if [[ ! -d "$THEME_DIR/" ]]; then
+	if ! git clone https://github.com/spicetify/spicetify-themes.git "$TMP_DIR" 2>&1 | log_pipe "GIT"; then
+		error "Failed to clone Spicetify themes repository." --log
+		exit 1
+	fi
+	mkdir -p "$SPICETIFY_DIR/Themes"
+	cp -rf "$TMP_DIR/text" "$THEME_DIR"
+	rm -rf "$TMP_DIR"
+	cp -f "$HOME"/.config/lazywal/extras/color.ini "$THEME_DIR/color.ini"
+	wpg --link "$HOME/.config/lazywal/extras/spicetify_color.ini.base" "$THEME_DIR/color.ini" 2>&1 | log_pipe "WPG"
+	success "'text' theme installed successfully" --log
+else
+	info "'text' theme is already installed"
+fi
+
+# Apply theme and color scheme
+info "Configuring and applying theme"
+spicetify config current_theme text >/dev/null 2>&1
+spicetify config color_scheme RockArch >/dev/null 2>&1
+spicetify apply 2>&1 | log_pipe "SPICETIFY"
+
+success "Spicetify theme applied successfully" --log

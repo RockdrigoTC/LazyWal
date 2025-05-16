@@ -1,0 +1,93 @@
+/*---------------------------------*\
+         Global Properties Section
+\*---------------------------------*/
+@import "~/.config/rofi/settings/rofi_colors.rasi"
+
+* {
+    margin:                     0;
+    padding:                    0;
+    spacing:                    0;
+    text-color:                 @foreground;
+    background-color:           @background;
+}
+
+/*---------------------------------*\
+       Main Window Section
+\*---------------------------------*/
+window {
+    width:                      600px;
+    background-color:           @background;
+    border-radius:              6px;
+    location:                   center;
+    anchor:                     center;
+}
+
+/*---------------------------------*\
+       Main Box Section
+\*---------------------------------*/
+mainbox {
+    background-color:           @background;
+    padding:                    10px;
+    spacing:                    5px;
+}
+
+inputbar {
+    background-color:           @background;
+    text-color:                 @foreground;
+    padding:                    5px;
+    children:                   [prompt, entry];
+}
+
+/*---------------------------------*\
+       Prompt Section
+\*---------------------------------*/
+prompt {
+    text-color:                 @active;
+}
+
+/*---------------------------------*\
+       Entry Section
+\*---------------------------------*/
+entry {
+    text-color:                 @foreground;
+    cursor:                     text;
+}
+
+/*---------------------------------*\
+       Entry Section
+\*---------------------------------*/
+listview {
+    background-color:           @background;
+    text-color:                 @foreground;
+    scrollbar:                  true;
+    fixed-height:               true;
+    dynamic:                    true;
+    padding:                    5px;
+    lines:                      22;
+}
+
+/*---------------------------------*\
+       Entry Section
+\*---------------------------------*/
+element {
+    background-color:           @background;
+    text-color:                 @foreground;
+    padding:                    2px 5px;
+    spacing:                    2px;
+}
+
+element.selected {
+    background-color:           @selected;
+    text-color:                 @background;
+}
+
+element-text.selected {
+    background-color: @selected;
+    text-color:       @background;
+}
+
+element-text {
+    background-color: @background;
+    text-color:       @foreground;
+}
+
