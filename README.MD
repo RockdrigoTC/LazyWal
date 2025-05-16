@@ -1,9 +1,20 @@
 # LazyWal - Arch Linux Ricing Setup Script
 
-![LazyWal Banner](https://your-image-url.com/banner.png)
+---
+
+<p align="center">
+  <img src="screenshots/LazyWal.gif" alt="LazyWal Theme" width="600"/>
+</p>
+
+<p align="center">
+  <img src="screenshots/Forest.gif" alt="Forest Theme" width="280" style="margin:10px"/>
+  <img src="screenshots/Sky.gif" alt="Sky Theme" width="280" style="margin:10px"/><br>
+  <img src="screenshots/Ocean.gif" alt="Ocean Theme" width="280" style="margin:10px"/>
+  <img src="screenshots/RockArch.gif" alt="RockArch Theme" width="280" style="margin:10px"/>
+</p>
 
 > **Automated installer & theme manager for Arch-based systems.**
-> Minimal, aesthetic, and efficient — because *I Use Arch, Btw*. (¬‿¬)
+> Minimal and efficient
 
 ---
 
