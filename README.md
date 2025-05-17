@@ -215,6 +215,33 @@ For more details on how to edit a colorscheme, refer to the wpgtk wiki:
 > through the graphical theme selector.  
 > See [Changing Themes](#changing-themes).
 
+### Viewing the LazyWal Log
+
+If you ever need to check what LazyWal has been doing under the hood, you can
+view the log file located at `~/.cache/lazywal/lazywal.log`
+
+You can open this log with your favorite text editor,
+but there's also a more _ricing-friendly_ way to do it directly from the terminal.
+
+LazyWal includes some simple helper commands for log viewing:
+
+- **logtail** → View the log in real time (like `tail -f`)
+- **logless** → View the log with paging & searching (like `less`)
+- **loggrep** → Search specific patterns inside the log (like `grep`)
+
+These tools are named to be self-explanatory and focus on exactly what they do.
+Their purpose is to make it easy to tail, view, or search through the LazyWal
+log without needing to remember commands.
+
+> **Recommended:**
+> If you enjoy the aesthetic of text flying by in the terminal,
+> this method will feel right at home.
+> It’s fast, efficient, and honestly… it looks pretty cool.
+
+#### Example of logtail in action:
+
+![LazyWal Logtail](screenshots/logtail.png)
+
 ---
 
 ## Contributing
