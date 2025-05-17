@@ -7,8 +7,11 @@
 ![Ocean Theme](screenshots/Ocean.gif)
 ![RockArch Theme](screenshots/RockArch.gif)
 
-> **Automated installer & theme manager for Arch-based systems.** "Minimal" and
-> efficient
+---
+
+> **A simple installer & theme manager for Arch-based systems.**  
+> Minimalist, practical, and focused on giving you a clean riced setup
+> without the hassle.
 
 ---
 
@@ -20,6 +23,8 @@
 - [Installation](#installation)
 - [Post-Installation](#post-installation)
 - [Usage](#usage)
+  - [Keybindings](#keybindings)
+    - [Keybindings interface](#keybindings-interface)
   - [Changing themes](#changing-themes)
   - [Adding Themes](#adding-themes)
   - [Configuring Themes](#configuring-themes)
@@ -33,13 +38,14 @@
 
 ## About LazyWal
 
-**LazyWal** is a shell script to automate the installation and configuration of
-a personalized ricing environment on Arch Linux. It integrates **Pywal**,
-**wpgtk**, **Qtile**, **Zsh**, and many more tools to provide a cohesive visual
-and functional experience.
+**LazyWal** is a shell script designed to simplify the setup of a personalized
+ricing environment on Arch Linux.
+It brings together tools like **Pywal**, **wpgtk**, **Qtile**, **Zsh**,
+and others to create a cohesive visual and functional desktop.
 
-The goal is to simplify the process of setting up a beautiful and productive
-desktop, while keeping it modular and easy to customize.
+The goal is to make the process of configuring a clean, beautiful,
+and productive environment less tedious,  
+while keeping everything modular and easy to tweak to your liking.
 
 ---
 
@@ -104,6 +110,20 @@ after the script has been executed.
 
 ## Usage
 
+### Keybindings
+
+LazyWal comes with a set of predefined keybindings to enhance productivity and
+ease of use. You can view the list of available keybindings in an interactive
+interface by pressing **Windows + o**. This will display a searchable menu where
+all default shortcuts are listed for quick reference.
+
+This feature helps you learn and explore the available keybindings without having
+to dig through configuration files.
+
+#### keybindings interface
+
+![Keybindings](screenshots/keybindings.jpg)
+
 ### Changing themes
 
 You can change themes in two different ways:
@@ -115,7 +135,7 @@ You can change themes in two different ways:
    For more details, check the [Adding Themes](#adding-themes) section.
 
 2. Using a keyboard shortcut  
-    Press Windows + i to open a theme selector interface.
+    Press **Windows + i** to open a theme selector interface.
    This interface will display the available themes you have configured.
    Navigate through the list, select the desired theme, and press Enter.
    The system will apply the new theme and show a notification once the
