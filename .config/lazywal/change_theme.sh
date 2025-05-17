@@ -79,7 +79,7 @@ else
 	fi
 fi
 
-wpg -o "$wallpaper_name" "$theme_json"
+wpg -o "$wallpaper_name" "$theme_json" 2>&1 | log_pipe "WPG"
 success "Wallpaper set & color scheme updated" --log
 
 # -----------------------------------------------------------------------------
